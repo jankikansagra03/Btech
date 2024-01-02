@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function print_name() {
+            var a;
+            a = document.getElementById("f_n").value;
+            // alert(a);
+            document.getElementById('p1').innerHTML = a;
+        }
+
+        function copy_address() {
+            var c_add = document.getElementById("c_address").value;
+            document.getElementById("p_address").value = c_add;
+            alert("Address copied successfully");
+        }
+
+        function maximum() {
+            var a = parseInt(document.getElementById('n1').value);
+            var b = parseInt(document.getElementById('n2').value);
+            var c = parseInt(document.getElementById('n3').value);
+            if (a > b & a > c) {
+                var max = a;
+            } else if (b > c & b > a) {
+                max = b;
+            } else {
+                max = c;
+            }
+            document.getElementById('p1').innerHTML = max;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" name="" id="n1">
+        <input type="text" name="" id="n2">
+        <input type="text" name="" id="n3">
+        <input type="button" value="Find Maximum" onclick="maximum()">
+        <p id="p1">Maximum Value</p>
+    </form>
+</body>
+
+</html>

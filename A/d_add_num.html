@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display_name() {
+            alert("hello");
+            var a = document.getElementById('n_m').value;
+            alert(a);
+        }
+        function sum() {
+            var a = document.getElementById('n_1').value;
+            var b = document.getElementById('n_2').value;
+            a = parseInt(a);
+            b = parseInt(b);
+            var c = a + b;
+            alert(c);
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        Enter Name: <input type="text" name="nm" id="n_m" value="computer">
+        <br>
+        Enter number-1: <input type="text" name="n1" id="n_1">
+        <br>
+        Enter number-2: <input type="text" name="n2" id="n_2">
+        <br>
+        <input type="button" value="find sum" ondblclick="sum()">
+        <br>
+        <input type="button" value="Display Name" onclick="display_name()">
+    </form>
+</body>
+
+</html>

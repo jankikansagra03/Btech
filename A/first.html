@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display_name() {
+            alert("function called");
+            var a;
+            a = document.getElementById("n_m").value;
+            alert(a);
+        }
+
+        function sum(a, b) {
+            alert("function called");
+            // var a = document.getElementById("n_1").value;
+            // var b = document.getElementById("n_2").value;
+            var a = parseInt(a);
+            var b = parseInt(b);
+            var c = a + b;
+            //alert(c);
+            document.getElementById("p1").innerHTML = "sum of " + a + " and " + b + " is " + c;
+            document.getElementById("p1").style.color = "green";
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        Enter your Number-1: <input type="text" name="n1" id="n_1">
+        <br>
+        Enter your Number-2: <input type="text" name="n2" id="n_2">
+        <br>
+        <input type="button" value="Sum"
+            onclick="sum(document.getElementById('n_1').value,document.getElementById('n_2').value)">
+    </form>
+
+    <p id="p1">Answer will be displayed here</p>
+</body>
+
+</html>

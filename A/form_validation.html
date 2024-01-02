@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var fn = document.getElementById('nm');
+            var fn_err = document.getElementById('nm_err');
+            if (fn.value == "") {
+                fn_err.innerHTML = "Name is required Filed";
+                fn_err.style.color = "red";
+                fn.style.border = "1px solid red";
+                return false;
+            } else {
+                var reg_fn = /^[a-zA-Z ]{2,30}$/;
+                var result = reg_fn.test(fn.value);
+                if (result == false) {
+                    fn_err.innerHTML =
+                        "Name contains only letters and minimum length is 2 characters and maximum length is    30 characters";
+                    fn_err.style.color = "red";
+                    fn.style.border = "1px solid red";
+                    return false;
+                } else {
+                    fn_err.innerHTML = "";
+                    return true;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" onsubmit="return validate()">
+        Enter your name: <input type="text" name="nm1" id="nm">
+        <p id="nm_err"></p>
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>

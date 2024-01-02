@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add_num() {
+            var a = parseInt(document.getElementById('n_1').value);
+            var b = parseInt(document.getElementById('n_2').value);
+            if (a > b) {
+                document.getElementById('ans').innerHTML = a + " is maximum number";
+            } else {
+                document.getElementById('ans').innerHTML = b + " is maximum number";
+            }
+
+            document.getElementById('ans').style.color = 'red';
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        Enter number-1 : <input type="text" name="n1" id="n_1">
+        <br>
+        Enter Number-2 : <input type="text" name="n2" id="n_2">
+        <br>
+        <input type="button" value="Add numbers" onclick="add_num()">
+        <br>
+        <p id="ans">Answer will be displayed here</p>
+    </form>
+</body>
+
+</html>

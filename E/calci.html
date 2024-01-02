@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addition() {
+            var a = parseInt(document.getElementById('n1').value);
+            var b = parseInt(document.getElementById('n2').value);
+            var c = a + b;
+            //alert(c);
+            document.getElementById('p1').innerHTML = "Sum of " + a + " and " + b + " is " + c;
+        }
+    </script>
+</head>
+
+<body>
+    Enter Num-1: <input type="text" name="" id="n1">
+    <br>
+    Enter Num-2: <input type="text" name="" id="n2">
+    <br>
+    <input type="button" value="Add" id="add" onclick="addition()">
+    <br>
+    <p id="p1">Answer will be displayed here</p>
+</body>
+
+</html>
