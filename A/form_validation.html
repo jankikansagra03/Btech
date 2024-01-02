@@ -9,11 +9,14 @@
         function validate() {
             var fn = document.getElementById('nm');
             var fn_err = document.getElementById('nm_err');
+            var mn = document.getElementById('mn');
+            var mn_err = document.getElementById('mn_err');
             if (fn.value == "") {
                 fn_err.innerHTML = "Name is required Filed";
                 fn_err.style.color = "red";
                 fn.style.border = "1px solid red";
-                return false;
+                var v_fn = false;
+                //return false;
             } else {
                 var reg_fn = /^[a-zA-Z ]{2,30}$/;
                 var result = reg_fn.test(fn.value);
@@ -22,11 +25,36 @@
                         "Name contains only letters and minimum length is 2 characters and maximum length is    30 characters";
                     fn_err.style.color = "red";
                     fn.style.border = "1px solid red";
-                    return false;
+                    v_fn = false;
                 } else {
                     fn_err.innerHTML = "";
-                    return true;
+                    v_fn = true;
                 }
+            }
+            if (mn.value == "") {
+                mn_err.innerHTML = "Mobile number is required Filed";
+                mn_err.style.color = "red";
+                mn.style.border = "1px solid red";
+                var v_mn = false;
+                //return false;
+            } else {
+                var reg_mn = /^[0-9]{10}$/;
+                var result = reg_mn.test(mn.value);
+                if (result == false) {
+                    mn_err.innerHTML =
+                        "Mobile number contains only 10 digits";
+                    mn_err.style.color = "red";
+                    mn.style.border = "1px solid red";
+                    v_mn = false;
+                } else {
+                    mn_err.innerHTML = "";
+                    v_mn = true;
+                }
+            }
+            if (v_fn == true && v_mn == true) {
+                return true;
+            } else {
+                return false;
             }
         }
     </script>
@@ -35,7 +63,10 @@
 <body>
     <form action="" onsubmit="return validate()">
         Enter your name: <input type="text" name="nm1" id="nm">
-        <p id="nm_err"></p>
+        <span id="nm_err"></span>
+        <br>
+        Enter Mobile number: <input type="text" name="mn1" id="mn">
+        <span id="mn_err"></span>
         <input type="submit" value="Register">
     </form>
 </body>
