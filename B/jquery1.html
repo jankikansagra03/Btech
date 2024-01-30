@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var a = $('#n1').val();
+                $('#p1').html(a);
+                alert(a);
+            })
+        });
+        // window.onload = function () {
+        //     if (document.addEventListener) {
+        //         document.getElementById("btn").addEventListener('click', f1, false);
+        //     } else {
+        //         document.getElementById("btn").attachEvent('onclick', f1);
+        //     }
+
+
+        //     function f1() {
+        //         alert("hello");
+        //     }
+        //  }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" name="" id="n1">
+        <input type="button" value="click" id="btn">
+        <p id="p1"></p>
+    </form>
+</body>
+
+</html>

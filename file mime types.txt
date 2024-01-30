@@ -1,0 +1,12 @@
+.pdf: application/pdf
+.html or .htm: text/html
+.css: text/css
+.js: application/javascript
+.jpg or .jpeg: image/jpeg
+.png: image/png
+.gif: image/gif
+.txt: text/plain
+.pdf: application/pdf
+.doc or .docx: application/msword or application/vnd.openxmlformats-officedocument.wordprocessingml.document
+.xls or .xlsx: application/vnd.ms-excel or application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+.xml: application/xml

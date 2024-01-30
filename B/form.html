@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var validated = true;
+            var name1 = document.getElementById("nm");
+            var name_err = document.getElementById('nm_err');
+            var mn = document.getElementById('mn');
+            var mn_err = document.getElementById('mn_err');
+            if (name1.value == "") {
+                name_err.innerHTML = 'Name is required field';
+                name_err.style.color = 'red';
+                validated = false;
+            } else {
+                var reg_name = /^[a-zA-Z ]{2,40}$/
+                if (reg_name.test(name1.value)) {
+                    name_err.innerHTML = "";
+
+                } else {
+                    name_err.innerHTML = 'Name contains only letters';
+                    name_err.style.color = 'red';
+                    validated = false;
+                }
+            }
+            if (mn.value == "") {
+                mn_err.innerHTML = "Mobile number cannot be Empty";
+                mn_err.style.color = 'red';
+                validated = false;
+            } else {
+                var reg_mn = /^[0-9]{10}$/;
+                if (reg_mn.test(mn.value)) {
+                    mn_err.innerHTML = "";
+                } else {
+                    mn_err.innerHTML = "Mobile number must contain only 10 digits.";
+                    mn_err.style.color = "red";
+                    validated = false;
+                }
+            }
+            return validated;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" onsubmit="return validate()">
+        Enter your name: <input type="text" name="nm1" id="nm">
+        <span id="nm_err"></span>
+        <br>
+        Enter Mobile number: <input type="text" name="" id="mn">
+        <span id="mn_err"></span>
+        <br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>

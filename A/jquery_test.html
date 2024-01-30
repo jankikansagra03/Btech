@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $('#btn1').click(function () {
+            var n1 = $('#n1').val();
+            //alert(n1);
+            var n2 = $('#n2').val();
+            n1 = parseInt(n1) + parseInt(n2);
+            alert(n1);
+        });
+        // alert(n1);
+    });
+</script>
+
+<body>
+    <form action="">
+        Enter number-1: <input type="text" name="" id="n1">
+        <br>Enter Number-2: <input type="text" name="" id="n2">
+        <input type="button" value="click" id="btn1">
+    </form>
+</body>
+
+</html>

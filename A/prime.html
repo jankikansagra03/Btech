@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var n = parseInt($('#n1').val());
+                var flag = 0;
+                if (n <= 2) {
+                    $('#p1').html(n + " is neither prime number nor a composite number");
+                } else {
+                    for (var i = 2; i < n; i++) {
+                        if (n % i == 0) {
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    if (flag == 0) {
+                        $('#p1').html(n + " is a prime number");
+                    } else {
+                        $('#p1').html(n + " is not a prime number");
+                    }
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="n1">
+    <br>
+    <input type="button" value="Check Prime" id="btn">
+    <br>
+    <p id="p1"></p>
+</body>
+
+</html>

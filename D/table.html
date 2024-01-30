@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function display_table() {
+            var r = document.getElementById('rows').value;
+            var c = document.getElementById('columns').value;
+            x = "<table border='1'>";
+            for (var i = 1; i <= r; i++) {
+                x = x + "<tr>";
+                for (var j = 1; j <= c; j++) {
+                    x = x + "<td>" + "123" + "</td>";
+                }
+                x = x + "</tr>";
+            }
+            x = x + "</table>";
+            document.getElementById("p1").innerHTML = x;
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    Enter Rows: <input type="text" name="" id="rows">
+    <br>Enter Columns: <input type="text" name="" id="columns">
+    <br><input type="button" value="Display Table" onclick="display_table()">
+    <br>
+    <p id="p1">Table will be displayed here</p>
+</body>
+
+</html>

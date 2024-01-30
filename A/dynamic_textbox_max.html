@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var n = parseInt($('#n').val());
+                var a = "";
+                for (var i = 1; i <= n; i++) {
+                    a += "Enter Number-" + i + " <input type='text' id='n" + i + "'/>" + "<br>";
+                }
+                $('#p1').html(a);
+            });
+
+            $('#btn1').click(function () {
+                var max = $('#n1').val();
+                // alert(max);
+                $('input[type="text"][id^="n"]').each(function () {
+                    if ($(this).val() > max) {
+                        max = $(this).val();
+                    }
+                });
+                // alert(max);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+<input type="text" id="n">
+<br><input type="button" value="Generate Textboxes" id="btn">
+<br>
+<p id="p1"></p>
+<br><input type="button" value="Find maximum" id="btn1">
+
+</html>

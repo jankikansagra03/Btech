@@ -27,7 +27,7 @@ function generate_day() {
     } else {
         days = 30;
     }
-    x = "Select Day:<select id='day1' >";
+    x = "Select Day:<select id='day1' >";gi
     for (var i = 1; i <= days; i++) {
         x = x + "<option value='" + i + "' >" + i + "</option>";
 
@@ -44,3 +44,7 @@ function Display_date() {
     x = d + " " + m + ", " + y;
     document.getElementById('p2').innerHTML = x;
 }
+
+<select id="day1">
+    <option value="1"></option>
+</select>

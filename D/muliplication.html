@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function multiply() {
+            var a = document.getElementById('n1').value;
+            alert(a);
+            var x = "";
+            for (var i = 1; i <= 20; i++) {
+                x = x + a + "* " + i + " = " + a * i + "<br>";
+            }
+            document.getElementById('p1').innerHTML = x;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="n1">
+    <br><input type="button" value="Generate Table" onclick="multiply()">
+    <br>
+    <p id="p1"></p>
+</body>
+
+</html>

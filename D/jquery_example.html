@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn1').click(function() {
+                alert("hello");
+            });
+        })
+    </script>
+    <script>
+        // (window).onload = function () {
+        //     if (document.addEventListener) {
+
+        //         document.getElementById('btn1').addEventListener('click', f1, false);
+        //     } else {
+        //         document.getElementById('btn1').attchEvent('onclick', f1);
+        //     }
+
+        //     function f1() {
+        //         alert("hello");
+        //     }
+        // }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Click Here" id="btn1">
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery.validate.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $.validator.addMethod("fnregex", function (value, element                             ) {
+                var regex = /^[a-zA-Z ]+$/;
+                return regex.test(value);
+            }, "Fullname must contain only letters");
+            $('#form1').validate({
+                rules: {
+                    fn: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 30,
+                        fnregex: true
+                    }
+                },
+                messages: {
+                    fn: {
+                        required: "Firstname is a required field",
+                        minlength: "Name musrt have atleast 2 charaters",
+                        maxlength: "name can have maximum 30 characters"
+                    }
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr('name') == "fn") {
+                        $('#fn_err').html(error);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="" id="form1">
+        Enter your name: <input type="text" name="fn" id="fn1">
+        <span id="fn_err"></span>
+        <br>
+        <input type="submit" value="btn">
+    </form>
+</body>
+
+</html>
