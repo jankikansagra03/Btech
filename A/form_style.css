@@ -1,0 +1,25 @@
+.error {
+    color: red;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input[type=text],
+textarea,
+select,
+input[type=file] {
+    border: 1px solid black;
+    height: 30px;
+    width: 100%;
+}
+
+input[type=submit] {
+    border: 3px solid black;
+    height: 30px;
+    width: 20%;
+    background-color: white;
+    border-radius: 5px;
+}

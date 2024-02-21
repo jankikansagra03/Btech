@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tgl_btn').click(function () {
+                $('.menu').toggleClass('active');
+            })
+        }) 
+    </script>
+    <style>
+        .navbar {
+            background-color: aqua;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .tgl_btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .menu li {
+            display: inline;
+            list-style-type: none;
+            margin-right: 20px;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:768px) {
+            .menu {
+                display: none;
+            }
+
+            .tgl_btn {
+                display: block;
+            }
+
+            .menu.active {
+                display: block;
+            }
+
+            .menu li {
+                display: block;
+                list-style-type: none;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="tgl_btn">&#9776</div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

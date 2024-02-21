@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tg-btn').click(function () {
+                $('.menu_items').toggleClass('active');
+            })
+        })
+    </script>
+</head>
+<style>
+    .navbar {
+        background-color: turquoise;
+        color: black;
+        margin: 0;
+        padding: 10px;
+    }
+    .tg-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: white;
+        cursor: pointer;
+        display: none;
+    }
+    .menu_items li {
+        display: inline;
+        list-style-type: none;
+        margin-right: 20px;
+    }
+    .menu_items li a {
+        color: white;
+        text-decoration: none;
+    }
+    @media screen and (max-width:768px) {
+        .menu_items {
+            display: none;
+        }
+        .tg-btn {
+            display: block;
+        }
+        .menu_items.active {
+            display: block;
+        }
+        .menu_items li {
+            display: block;
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+    }
+</style>                                                                    
+<body>
+    <div class="navbar">
+        <div class="tg-btn">&#9776</div>
+        <ul class="menu_items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

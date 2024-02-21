@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                var r = $('#r1').val();
+                var c = $('#c1').val();
+                var x = "<table border='1'>";
+                for (i = 1; i <= r; i++) {
+                    x = x + "<tr>";
+                    for (j = 1; j <= c; j++) {
+                        x = x + "<td>113</td>"
+                    }
+                    x = x + "</tr>";
+                }
+                x = x + "</table>";
+                $('#p1').html(x);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form action="">
+        Enter rows: <input type="text" name="r" id="r1">
+        <br>
+        Enter columns: <input type="text" name="c" id="c1">
+        <br>
+        <input type="button" value="generate table" id="btn1">
+    </form>
+    <p id="p1"></p>
+</body>
+
+</html>
