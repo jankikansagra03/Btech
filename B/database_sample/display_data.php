@@ -52,6 +52,7 @@ while ($r = mysqli_fetch_array($result)) {
                 }
             };
             xhttp.open("POST", "delete_user.php", true);
+            xhttp.setRequestH
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             // alert(em);
             xhttp.send("email=" + em);

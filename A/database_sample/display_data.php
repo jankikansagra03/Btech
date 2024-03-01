@@ -1,3 +1,8 @@
+<script>
+    function delete_user_confirm(em) {
+        alert(em);
+    }
+</script>
 <?php
 include_once("connection.php");
 
@@ -22,7 +27,7 @@ while ($r = mysqli_fetch_array($result)) {
     echo "<td>" . $r[10] . "</td>";
     ?>
     <td> <a href="edit_user.php?em=<?php echo $r[1]; ?>"> <input type="button" value="Edit"> </a></td>
-    <td> <a href="delete_user.php?em=<?php echo $r[1]; ?>"> <input type="button" value="Delete"> </a></td>
+    <td> <input type="button" value="Delete" onclick="delete_user_confirm(<?php echo $r[1]; ?>)"> </td>
 <?php
     echo "</tr>";
 }
