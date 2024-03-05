@@ -44,7 +44,7 @@ include_once("guest_header.php");
     </div>
 </div>
 
-<div class="cotainer-fluid">
+<!-- <div class="cotainer-fluid">
     <h1 align="center">Awards and Recognition</h1>
 
 
@@ -53,4 +53,4 @@ include_once("guest_header.php");
 <div class="container-fluid">
     <h1 align="center">Testimonials</h1>
    
-</div>
+</div> -->

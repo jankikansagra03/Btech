@@ -3,4 +3,14 @@ a.active {
     color: black !important;
     border-radius: 10px;
 
+
+}
+.container h1
+{
+    border-bottom: 2px solid black;
+}
+
+.error {
+    color: red;
+    font-size: 16px;
 }

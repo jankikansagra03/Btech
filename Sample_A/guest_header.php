@@ -17,6 +17,7 @@ $arr_url = explode("/", $url);
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
 
 </head>
 

@@ -12,13 +12,19 @@ $first_part = $components[3];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
 
     <style>
-
+        .error {
+            color: red;
+        }
     </style>
 </head>
 
@@ -36,6 +42,13 @@ $first_part = $components[3];
                                                 echo "active";
                                             } ?>" href="index.php">Home</a>
                     </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link <?php if ($first_part == "event.php") {
+                                                echo "active";
+                                            } ?>" href="event.php">Events</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if ($first_part == "about.php") {
                                                 echo "active";
@@ -45,11 +58,6 @@ $first_part = $components[3];
                         <a class="nav-link <?php if ($first_part == "contact.php") {
                                                 echo "active";
                                             } ?>" href=contact.php>Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?php if ($first_part == "event.php") {
-                                                echo "active";
-                                            } ?>" href="event.php">Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if ($first_part == "login.php") {
