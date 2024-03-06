@@ -18,6 +18,9 @@ $arr_url = explode("/", $url);
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/validator.js"></script>
 
 </head>
 
