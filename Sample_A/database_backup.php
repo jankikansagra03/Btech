@@ -1,5 +1,4 @@
 <?php
-
 $con = mysqli_connect("localhost", "root", "", "sample_A");
 
 //$q = "create database Sample_A";
@@ -12,4 +11,5 @@ $reg = "create table registration(
     role char(10) not null default 'user',
     status char(10) not null default 'Inactive'
     )";
+    
 mysqli_query($con, $reg);

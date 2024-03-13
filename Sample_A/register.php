@@ -25,8 +25,9 @@ include_once("guest_header.php");
                     <span id="pswd_err"></span>
                 </div>
                 <div class="form-group">
-                    <label for="repwd">Confirm Password" class="form-control" id="repwd" placeholder="Enter password" name="repswd">
-                        <span id="repswd_err"></span>
+                    <label for="repwd">Confirm Password</label>
+                    <input type="password" class="form-control" id="repwd" placeholder="Enter password" name="repswd">
+                    <span id="repswd_err"></span>
                 </div>
                 <div class="form-group">
                     <label for="file1">Select Profile Picture:</label>

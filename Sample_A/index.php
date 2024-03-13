@@ -1,5 +1,9 @@
 <?php
 include_once("guest_header.php");
+include_once("connection.php");
+$q = "select* from slider_images";
+$result=mysqli_query($con,$q);
+$count = mysqli_num_rows($result);
 ?>
 <br>
 <div class="container-fluid">
@@ -7,30 +11,42 @@ include_once("guest_header.php");
 
         <!-- Indicators -->
         <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-            <li data-target="#demo" data-slide-to="3"></li>
-            <li data-target="#demo" data-slide-to="4"></li>
+            <?php
+            for ($j = 1; $j <= $count;$j++)
+            {
+                ?>
+                <li data-target="#demo" data-slide-to="0" class="<?php if($j==1)
+                {
+                    echo "active";
+                }  ?>"></li>
+                <?php
+            }
+            ?>
+            
+            
         </ul>
-
-        <!-- The slideshow -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/slider/aria-slider.webp" alt="Los Angeles" class="img-fluid" />
+<?php
+$i = 0;
+while($r=mysqli_fetch_array($result))
+{
+
+?>
+ <div class="carousel-item <?php if ($i == 0) {
+           echo "active";
+       }
+    ?>" >
+                <img src="images/slider/<?php echo $r[1];?>" alt="Los Angeles" class="img-fluid" />
             </div>
-            <div class="carousel-item">
-                <img src="images/slider/NAAC_1.webp" alt="Chicago" class="img-fluid" />
-            </div>
-            <div class="carousel-item">
-                <img src="images/slider/nirf-ranking-slider.webp" alt="New York" class="img-fluid" />
-            </div>
-            <div class="carousel-item">
-                <img src="images/slider/swacch award.webp" alt="New York" class="img-fluid" />
-            </div>
-            <div class="carousel-item">
-                <img src="images/slider/the-art-of-living-rku-mou.webp" alt="New York" class="img-fluid" />
-            </div>
+
+<?php
+$i++;
+}
+?>
+        <!-- The slideshow -->
+       
+           
+           
         </div>
 
         <!-- Left and right controls -->

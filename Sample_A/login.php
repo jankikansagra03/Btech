@@ -25,8 +25,5 @@ include_once("guest_header.php");
                 <button type="submit" class="btn btn-dark">Submit</button>
             </form>
         </div>
-
     </div>
-
-
 </div>
