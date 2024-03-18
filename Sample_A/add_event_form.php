@@ -74,15 +74,17 @@ if (isset($_POST['btn'])) {
     // echo $event_extra;
     $tmp_name = "extra_image";
     $ans = "";
+    $extra = [];
     for ($i = 0; $i < $count; $i++) {
         $t = $tmp_name . $i;
         $t = uniqid() . $_FILES['e_extra']['name'][$i];
 
         // echo "<br>" . $t;
         $ans = $t . ",";
+        $extra[$i] = $t;
         echo $ans;
     }
-    $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place',' $event_main','$event_extra')";
+    $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place',' $event_main','$ans')";
 
     if (mysqli_query($con, $q)) {
         echo "Event Added successfully.";
@@ -92,10 +94,11 @@ if (isset($_POST['btn'])) {
         $event_main = uniqid() . $_FILES['e_main']['name'];
         $event_main = uniqid() . $_FILES['e_main']['name'];
         move_uploaded_file($_FILES['e_main']['tmp_name'], "images/events/" . $event_main);
+        for ($i = 0; $i < $count; $i++) {
+            move_uploaded_file($_FILES['e_extra']['tmp_name'][$i], $extra[$i]);
+        }
 ?>
-        <script>
-            window.location.href = "manage_events.php";
-        </script>
+
 <?php
     } else {
         echo "error in adding Event.";
