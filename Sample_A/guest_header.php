@@ -12,7 +12,6 @@ $arr_url = explode("/", $url);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery.js"></script>
     <script src="js/popper.min.js"></script>
@@ -21,6 +20,7 @@ $arr_url = explode("/", $url);
     <script src="js/jquery.validate.js"></script>
     <script src="js/additional-methods.min.js"></script>
     <script src="js/validator.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 

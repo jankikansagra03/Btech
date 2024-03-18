@@ -38,8 +38,12 @@ include_once("guest_header.php");
                     <textarea class="form-control" name="msg" id="msg1" cols="30" rows="5"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-dark">Submit</button>
+                <button type="submit" class="btn">Submit</button>
             </form>
         </div>
     </div>
 </div>
+<br>
+<?php
+include_once("footer.php");
+?>

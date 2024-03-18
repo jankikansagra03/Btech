@@ -34,7 +34,7 @@ include_once("guest_header.php");
                     <input type="file" class="form-control" id="file1" name="pic">
                     <span id="file1_err"></span>
                 </div>
-                <button type="submit" class="btn btn-dark">Submit</button>
+                <input type="submit" class="btn" value="Submit">
             </form>
         </div>
 
@@ -42,3 +42,7 @@ include_once("guest_header.php");
 
 
 </div>
+<br>
+<?php
+include_once("footer.php");
+?>

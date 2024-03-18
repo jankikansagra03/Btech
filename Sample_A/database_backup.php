@@ -12,7 +12,12 @@ $con = mysqli_connect("localhost", "root", "", "sample_A");
 //     status char(10) not null default 'Inactive'
 //     )";
 
-$events = "create table event_details(event_id int(5) primary  key Auto_increment,
-event_title varchar(255) not null, event_description text(500) not null,event_date date not null,event_type varchar(255) not null, event_place varchar(255) not null, main_image varchar(255) not null, extra_images varchar(255) not null)";
+// $events = "create table event_details(event_id int(5) primary  key Auto_increment,
+// event_title varchar(255) not null, event_description text(500) not null,event_date date not null,event_type varchar(255) not null, event_place varchar(255) not null, main_image varchar(255) not null, extra_images varchar(255) not null)";
 
-mysqli_query($con, $events);
+$slider_images = "create table slider_images(
+    id int primary key auto_increment,
+    image_name varchar(255) not null
+)";
+
+mysqli_query($con, $slider_images);

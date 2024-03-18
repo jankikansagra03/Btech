@@ -22,8 +22,12 @@ include_once("guest_header.php");
                         <input class="form-check-input" type="checkbox" name="remember"> Remember me
                     </label>
                 </div>
-                <button type="submit" class="btn btn-dark">Submit</button>
+                <input type="submit" class="btn" value="Submit" />
             </form>
         </div>
     </div>
 </div>
+<br>
+<?php
+include_once("footer.php");
+?>

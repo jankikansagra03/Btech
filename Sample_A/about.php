@@ -24,3 +24,7 @@ include_once("guest_header.php");
     <br>
     To be a leading educational organization imparting holistic education to help students become responsible world citizens who are sensitive to the needs of the society.
 </div>
+<br>
+<?php
+include_once("footer.php");
+?>
