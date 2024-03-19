@@ -50,7 +50,7 @@ $count = mysqli_num_rows($result);
         </a>
     </div>
 </div>
-
+<br>
 <?php
 include_once("footer.php");
 ?>

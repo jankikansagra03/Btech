@@ -47,3 +47,13 @@
         color: white;
         text-decoration: #ffffff underline;
     }
+
+    a.active {
+        background-color: white;
+        color: #3b5998 !important;
+        border-radius: 5px;
+    }
+
+    .error {
+        color: red;
+    }

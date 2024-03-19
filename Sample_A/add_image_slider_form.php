@@ -1,8 +1,7 @@
 <?php
 include_once("admin_header.php");
 ?>
-<br>
-<br>
+
 <div class="container-fluid">
     <div class="row">
         <div class=col-lg-3></div>
@@ -14,7 +13,7 @@ include_once("admin_header.php");
                     <input type="file" class="form-control" id="file1" name="slider1">
                 </div>
 
-                <button type="submit" class="btn btn-dark" name="btn">Submit</button>
+                <input type="submit" class="btn btn-dark" name="btn" value="Submit">
             </form>
         </div>
     </div>

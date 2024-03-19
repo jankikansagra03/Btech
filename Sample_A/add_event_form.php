@@ -30,6 +30,7 @@ include_once("admin_header.php");
                         <option value="Seminar">Seminar</option>
                         <option value="Workshop">Workshop</option>
                         <option value="Conference">Conference</option>
+                        <option value="Event">Event</option>
                     </select>
                     <span id="e_type_err"></span>
                 </div>
@@ -48,9 +49,9 @@ include_once("admin_header.php");
                     <input type="file" class="form-control" id="e_extra1" placeholder="Enter Event Title" name="e_extra[]" multiple>
                     <span id="e_extra_err"></span>
                 </div>
-                <div class="form-group">
-                    <input type="submit" class="form-control btn btn-dark" value="Add Event" name="btn">
-                </div>
+
+                <input type="submit" class="btn btn-dark" value="Add Event" name="btn">
+
             </form>
         </div>
     </div>
@@ -80,22 +81,22 @@ if (isset($_POST['btn'])) {
         $t = uniqid() . $_FILES['e_extra']['name'][$i];
 
         // echo "<br>" . $t;
-        $ans = $t . ",";
+        if ($i < $count - 1)
+            $ans = $ans . $t . ",";
+        else
+            $ans = $ans . $t;
         $extra[$i] = $t;
-        echo $ans;
     }
-    $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place',' $event_main','$ans')";
+    $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place','$event_main','$ans')";
 
     if (mysqli_query($con, $q)) {
         echo "Event Added successfully.";
         if (!is_dir("images/events")) {
             mkdir("images/events");
         }
-        $event_main = uniqid() . $_FILES['e_main']['name'];
-        $event_main = uniqid() . $_FILES['e_main']['name'];
         move_uploaded_file($_FILES['e_main']['tmp_name'], "images/events/" . $event_main);
         for ($i = 0; $i < $count; $i++) {
-            move_uploaded_file($_FILES['e_extra']['tmp_name'][$i], $extra[$i]);
+            move_uploaded_file($_FILES['e_extra']['tmp_name'][$i], "images/events/" . $extra[$i]);
         }
 ?>
 
