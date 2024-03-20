@@ -1,4 +1,5 @@
 <?php
+include_once("connection.php");
 $u = $_SERVER['REQUEST_URI'];
 $u = parse_url($u, PHP_URL_PATH);
 $u_array = explode("/", $u);

@@ -1,13 +1,12 @@
 <?php
-
-include_once("admin_header.php");
+include_once("header.php");
 ?>
 <div class="container-fluid">
     <div class="row">
         <div class=col-lg-3></div>
         <div class=col-lg-6>
             <h2>Add Event Form</h2>
-            <form action="add_event_form.php" method="post" enctype="multipart/form-data">
+            <form action="add_events_form.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="et1">Event Title:</label>
                     <input type="text" class="form-control" id="et1" placeholder="Enter Event Title" name="et">
@@ -25,7 +24,7 @@ include_once("admin_header.php");
                 </div>
                 <div class="form-group">
                     <label for="e_type1">Event Type:</label>
-                    <select name="e_type" id="e_type1" class="form-control" >
+                    <select name="e_type" id="e_type1" class="form-control">
                         <option value="Industrial Visit">Industrial Visit</option>
                         <option value="Seminar">Seminar</option>
                         <option value="Workshop">Workshop</option>
@@ -57,8 +56,9 @@ include_once("admin_header.php");
     </div>
 </div>
 
-<?php
 
+<?php
+include_once("footer.php");
 if (isset($_POST['btn'])) {
     $event_title = $_POST['et'];
     $event_description = $_POST['ed'];
@@ -68,27 +68,23 @@ if (isset($_POST['btn'])) {
     $event_main = uniqid() . $_FILES['e_main']['name'];
 
     $event_extra = "";
-    // $event_title = $_POST['et'];
     $count = count($_FILES['e_extra']['name']);
-    echo $count;
-    //$event_extra = implode(",", $_FILES['e_extra']['name']);
-    // echo $event_extra;
-    $tmp_name = "extra_image";
+    // echo $count;
+    //$tmp_name = "extra_image";
     $ans = "";
     $extra = [];
     for ($i = 0; $i < $count; $i++) {
-        $t = $tmp_name . $i;
+        //$t = $tmp_name . $i;
         $t = uniqid() . $_FILES['e_extra']['name'][$i];
-
-        // echo "<br>" . $t;
         if ($i < $count - 1)
             $ans = $ans . $t . ",";
         else
             $ans = $ans . $t;
         $extra[$i] = $t;
     }
-    $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place','$event_main','$ans')";
+    // echo $ans;
 
+    $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place','$event_main','$ans')";
     if (mysqli_query($con, $q)) {
         echo "Event Added successfully.";
         if (!is_dir("images/events")) {
@@ -98,10 +94,8 @@ if (isset($_POST['btn'])) {
         for ($i = 0; $i < $count; $i++) {
             move_uploaded_file($_FILES['e_extra']['tmp_name'][$i], "images/events/" . $extra[$i]);
         }
-?>
-
-<?php
     } else {
-        echo "error in adding Event.";
+        echo "error";
     }
 }
+?>

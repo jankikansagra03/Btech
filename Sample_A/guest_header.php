@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("connection.php");
 $url = $_SERVER['REQUEST_URI'];
 // echo $url;
@@ -22,6 +23,7 @@ $arr_url = explode("/", $url);
     <script src="js/additional-methods.min.js"></script>
     <script src="js/validator.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/ajax.js"></script>
 
 </head>
 

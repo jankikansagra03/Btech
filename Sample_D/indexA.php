@@ -1,43 +1,41 @@
 <?php
 include_once("header.php");
-$q = "select * from image_slider";
+$con = mysqli_connect("localhost", "root", "", "btech_e");
+$q = "select * from slider_images";
 $result = mysqli_query($con, $q);
-$count = mysqli_num_rows($result);
-?>
+$count = mysqli_num_rows($result); ?>
 <br>
 <div id="demo" class="carousel slide" data-ride="carousel">
-
     <!-- Indicators -->
     <ul class="carousel-indicators">
         <?php
-        for ($i = 0; $i < $count; $i++) {
-        ?>
 
-            <li data-target="#demo" data-slide-to="<?php echo $i; ?>" class="<?php if ($i == 1) {
-                                                                                echo "active";
-                                                                            } ?>"></li>
+        for ($j = 0; $j <= $count - 1; $j++) {
+        ?>
+            <li data-target="#demo" data-slide-to="<?php echo $j; ?>" class="
+            <?php if ($j == 0) {
+                echo "active";
+            } ?>"></li>
         <?php
         }
         ?>
-
     </ul>
-
     <!-- The slideshow -->
     <div class="carousel-inner">
         <?php
         $i = 1;
-        while ($img1 = mysqli_fetch_array($result)) {
+        while ($res = mysqli_fetch_array($result)) {
         ?>
             <div class="carousel-item <?php if ($i == 1) {
                                             echo "active";
                                         } ?>">
-                <img src="images/slider/<?php echo $img1[1]; ?>" alt="Los Angeles" class="img-fluid">
+                <img src="images/slider/<?php echo $res[1]; ?>" alt="Los Angeles" class="img-fluid">
             </div>
+
         <?php
             $i++;
         }
         ?>
-
     </div>
 
     <!-- Left and right controls -->
