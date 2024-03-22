@@ -32,3 +32,5 @@ $result = mysqli_query($con, $q);
 <?php
 include_once("footer.php");
 ?>
+
+http://localhost/btech/Sample_A/view_event_detail.php?event_id=8

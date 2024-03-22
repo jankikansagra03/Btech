@@ -14,7 +14,7 @@ include_once("admin_header.php");
                     <span id="et_err"></span>
                 </div>
                 <div class="form-group">
-                    <label for="ed1">Event Title:</label>
+                    <label for="ed1">Event Description:</label>
                     <textarea class="form-control" id="ed1" placeholder="Enter Event Description" name="ed" rows="5"></textarea>
                     <span id="ed_err"></span>
                 </div>
@@ -25,7 +25,7 @@ include_once("admin_header.php");
                 </div>
                 <div class="form-group">
                     <label for="e_type1">Event Type:</label>
-                    <select name="e_type" id="e_type1" class="form-control" >
+                    <select name="e_type" id="e_type1" class="form-control">
                         <option value="Industrial Visit">Industrial Visit</option>
                         <option value="Seminar">Seminar</option>
                         <option value="Workshop">Workshop</option>
@@ -68,25 +68,17 @@ if (isset($_POST['btn'])) {
     $event_main = uniqid() . $_FILES['e_main']['name'];
 
     $event_extra = "";
-    // $event_title = $_POST['et'];
+
     $count = count($_FILES['e_extra']['name']);
     echo $count;
-    //$event_extra = implode(",", $_FILES['e_extra']['name']);
-    // echo $event_extra;
-    $tmp_name = "extra_image";
     $ans = "";
     $extra = [];
     for ($i = 0; $i < $count; $i++) {
-        $t = $tmp_name . $i;
         $t = uniqid() . $_FILES['e_extra']['name'][$i];
-
-        // echo "<br>" . $t;
-        if ($i < $count - 1)
-            $ans = $ans . $t . ",";
-        else
-            $ans = $ans . $t;
         $extra[$i] = $t;
     }
+    $ans = implode(",", $extra);
+ 
     $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place','$event_main','$ans')";
 
     if (mysqli_query($con, $q)) {

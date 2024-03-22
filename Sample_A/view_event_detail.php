@@ -29,7 +29,7 @@ $result = mysqli_query($con, $q);
                     foreach ($extra as $e) {
                     ?>
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                            <img src="images/events/<?php echo $e ?>" alt="err" />
+                            <img src="images/events/<?php echo $e; ?>" alt="err" />
                         </div>
                     <?php
                     }
