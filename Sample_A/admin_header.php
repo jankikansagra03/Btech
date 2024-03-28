@@ -1,10 +1,20 @@
 <?php
+session_start();
 include_once("connection.php");
 $url = $_SERVER['REQUEST_URI'];
 // echo $url;
 $url = parse_url($url, PHP_URL_PATH);
 $arr_url = explode("/", $url);
 //echo $arr_url[3];
+
+if (!isset($_SESSION['admin_uname'])) {
+?>
+    <script>
+        window.location.href = "login.php";
+    </script>
+<?php
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +77,7 @@ $arr_url = explode("/", $url);
                     <li class="nav-item">
                         <a class="nav-link <?php if ($arr_url[3] == "logout.php") {
                                                 echo "active";
-                                            } ?>" href="logout.php">Logout</a>
+                                            } ?>" href="admin_logout.php">Logout</a>
                     </li>
                 </ul>
             </div>

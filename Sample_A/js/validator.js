@@ -58,6 +58,13 @@ $(document).ready(function () {
                 required: true,
                 accept: "image/jpeg,image/png,image/gif",
                 filesize: 2
+            },
+            mobile: {
+                required: true,
+                mobregex: true
+            },
+            gen: {
+                required: true
             }
         },
         messages: {
@@ -83,6 +90,12 @@ $(document).ready(function () {
                 required: "Please select a file to upload",
                 accept: "only imge file with extension jpg,png and gif are allowed",
                 filesize: "File size must not be greater than 10KB"
+            },
+            mobile: {
+                required: "Mobile number cannot be empty"
+            },
+            gen: {
+                required: "Please select your gender"
             }
         },
         errorPlacment: function (error, element) {
@@ -101,8 +114,12 @@ $(document).ready(function () {
             if (element.attr('name') == "pic") {
                 $('#file1_err').html(error);
             }
-
-
+            if (element.attr('name') == "gen") {
+                $('#gen_err').html(error);
+            }
+            if (element.attr('name') == "mobile") {
+                $('#mobile_err').html(error);
+            }
         }
     });
 });
