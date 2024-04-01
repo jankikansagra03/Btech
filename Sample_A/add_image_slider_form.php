@@ -27,17 +27,18 @@ if (isset($_POST['btn'])) {
     $q = "INSERT INTO `slider_images`(`image_name`) VALUES ('$image_name')";
 
     if (mysqli_query($con, $q)) {
-        echo "image uploaded successfully";
+
         if (!is_dir("images/slider")) {
             mkdir("images/slider");
         }
         move_uploaded_file($_FILES['slider1']['tmp_name'], "images/slider/" . $image_name);
-?>
-        <script>
-            window.location.href = "manage_events.php";
-        </script>
-<?php
+        setcookie('success', 'Slider image uploaded successfully', time() + 2, "/'");
     } else {
-        echo "error uploading image";
+        setcookie('error', 'Error in uploading Slider Image', time() + 2, "/'");
     }
+?>
+    <script>
+        window.location.href = "manage_slider.php";
+    </script>
+<?php
 }

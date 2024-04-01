@@ -20,25 +20,30 @@ include_once("guest_header.php");
         </div>
         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <h1>Contact Form</h1>
-            <form action="/action_page.php" method="post" enctype="multipart/form-data">
+            <form action="contact_action.php" method="post" enctype="multipart/form-data" id="form1">
                 <div class="form-group">
                     <label for="fn1">Fullname:</label>
-                    <input type="email" class="form-control" id="fn1" placeholder="Enter Name" name="fn">
+                    <input type="text" class="form-control" id="fn1" placeholder="Enter Name" name="fn">
+                    <span id="fn_err"></span>
                 </div>
                 <div class="form-group">
                     <label for="email1">Email:</label>
                     <input type="email" class="form-control" id="email1" placeholder="Enter email" name="email">
+                    <span id="email_err"></span>
                 </div>
                 <div class="form-group">
                     <label for="mn1">Mobile Number:</label>
-                    <input type="text" class="form-control" id="mn1" placeholder="Enter Mobile Number" name="mn">
+                    <input type="text" class="form-control" id="mn1" placeholder="Enter Mobile Number" name="mobile">
+                    <span id="mobile_err"></span>
+
                 </div>
                 <div class="form-group">
                     <label for="msg1">Enter Message:</label>
                     <textarea class="form-control" name="msg" id="msg1" cols="30" rows="5"></textarea>
+                    <span id="msg1_err"></span>
                 </div>
 
-                <button type="submit" class="btn">Submit</button>
+                <input type="submit" class="btn" value="Submit" name="btn">
             </form>
         </div>
     </div>

@@ -65,9 +65,9 @@ if (!isset($_SESSION['admin_uname'])) {
                                             } ?>" href="manage_slider.php">Slider Images</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if ($arr_url[3] == "edit_profile.php") {
+                        <a class="nav-link <?php if ($arr_url[3] == "admin_edit_profile.php") {
                                                 echo "active";
-                                            } ?>" href="edit_profile.php">Edit Profile</a>
+                                            } ?>" href="admin_edit_profile.php">Edit Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if ($arr_url[3] == "change_password.php") {

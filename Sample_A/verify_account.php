@@ -4,8 +4,8 @@ include_once("guest_header.php");
 $em = $_REQUEST['em'];
 $token = $_REQUEST['token'];
 
-echo $em;
-echo $token;
+// echo $em;
+// echo $token;
 
 $q = "select * from registration where email='$em' and token='$token'";
 $result = mysqli_query($con, $q);
@@ -20,17 +20,22 @@ if ($count == 1) {
         } else {
             $updt = "update registration set `status`='Active' where email='$em' and token='$token'";
             if (mysqli_query($con, $updt)) {
-                $_SESSION['success'] = "Activation activated successfully";
+                setcookie('success', "Activation activated successfully", time() + 2, "/");
             } else {
-                $_SESSION['error'] = "Error in activating Account. Please try again later.";
+                setcookie('error', "Error in activating Account. Please try again later.", time() + 2, "/");
             }
         }
 ?>
         <script>
             window.location.href = "login.php";
         </script>
-<?php
+    <?php
     }
 } else {
-    echo "Either Email is not registered or token is incorrect.";
+    setcookie('error', "Either Email is not registered or token is incorrect.", time() + 2, "/");
+    ?>
+    <script>
+        window.location.href = "register.php";
+    </script>
+<?php
 }

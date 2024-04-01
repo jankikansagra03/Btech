@@ -16,20 +16,20 @@ $result = mysqli_query($con, $q);
                 $extra = explode(",", $res[7]);
             ?>
                 <h3 style="text-decoration: underline;"> <?php echo $res[1]; ?></h3>
-                <p><?php echo $res[2]; ?></p>
-                <p>Event Date:: <?php echo $res[3]; ?></p>
-                <p>Event Type:: <?php echo $res[4]; ?></p>
-                <p>Event Place:: <?php echo $res[5]; ?></p>
-                <div class=" row gy-10">
-                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                        <img src="images/events/<?php echo $res[6]; ?>" alt="err" />
+                <p style="text-align: justify;"><?php echo $res[2]; ?></p>
+                <p><b>Event Date:: </b><?php echo $res[3]; ?></p>
+                <p><b>Event Type:: </b><?php echo $res[4]; ?></p>
+                <p><b>Event Place:: </b><?php echo $res[5]; ?></p>
+                <div class="row gy-10">
+                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-4 d-block mx-auto mx-md-0" style="height:200px">
+                        <img src="images/events/<?php echo $res[6]; ?>" alt="err" class="img-fluid" style="height: 100%; width: 100%; object-fit: cover;" />
                     </div>
                     <?php
 
                     foreach ($extra as $e) {
                     ?>
-                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                            <img src="images/events/<?php echo $e; ?>" alt="err" />
+                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-4 d-block mx-auto mx-md-0" style="height:200px">
+                            <img src="images/events/<?php echo $e ?>" alt="err" class="img-fluid" style="height: 100%; width: auto; object-fit: cover;" />
                         </div>
                     <?php
                     }
@@ -38,6 +38,11 @@ $result = mysqli_query($con, $q);
             <?php
             }
             ?>
+
         </div>
     </div>
 </div>
+<br>
+
+<?php
+include_once("footer.php");

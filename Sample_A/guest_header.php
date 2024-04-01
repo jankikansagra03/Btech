@@ -5,7 +5,21 @@ $url = $_SERVER['REQUEST_URI'];
 // echo $url;
 $url = parse_url($url, PHP_URL_PATH);
 $arr_url = explode("/", $url);
-//echo $arr_url[3];
+if (isset($_SESSION['admin_uname'])) {
+?>
+    <script>
+        window.location.href = "admin_dashboard.php";
+    </script>
+<?php
+}
+if (isset($_SESSION['user_uname'])) {
+?>
+    <script>
+        window.location.href = "user_dashboard.php";
+    </script>
+<?php
+}
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">

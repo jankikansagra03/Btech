@@ -31,7 +31,8 @@ if (isset($_POST['lgn_btn'])) {
                 <?php
                 }
             } else {
-                $_SESSION['error'] = "Account is not activated. Kindly activate your account by clicking on the activation link sent to your email address.";
+
+                setcookie("error", "Account is not activated. Kindly activate your account by clicking on the activation link sent to your email address.", time() + 2, "/");
                 ?>
                 <script>
                     window.location.href = "login.php";
@@ -40,7 +41,7 @@ if (isset($_POST['lgn_btn'])) {
             }
         }
     } else {
-        $_SESSION['error'] = "Incorrect username or password.";
+        setcookie("error", "Incorrect username or password", time() + 2, "/");
         ?>
         <script>
             window.location.href = "login.php";

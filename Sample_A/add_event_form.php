@@ -78,11 +78,10 @@ if (isset($_POST['btn'])) {
         $extra[$i] = $t;
     }
     $ans = implode(",", $extra);
- 
+
     $q = "INSERT INTO `event_details`(`event_title`, `event_description`, `event_date`, `event_type`, `event_place`, `main_image`, `extra_images`) VALUES ('$event_title','$event_description','$event_date','$event_type ','$event_place','$event_main','$ans')";
 
     if (mysqli_query($con, $q)) {
-        echo "Event Added successfully.";
         if (!is_dir("images/events")) {
             mkdir("images/events");
         }
@@ -90,10 +89,16 @@ if (isset($_POST['btn'])) {
         for ($i = 0; $i < $count; $i++) {
             move_uploaded_file($_FILES['e_extra']['tmp_name'][$i], "images/events/" . $extra[$i]);
         }
+        setcookie('success', 'Event Added Successfully', time() + 2, "/");
 ?>
 
-<?php
+    <?php
     } else {
-        echo "error in adding Event.";
+        setcookie('error', 'Error in adding Event', time() + 2, "/");
     }
+    ?>
+    <script>
+        window.location.href = "manage_events.php";
+    </script>
+<?php
 }
