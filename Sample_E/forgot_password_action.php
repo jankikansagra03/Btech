@@ -42,7 +42,7 @@ if (isset($_POST['btn'])) {
                     $mail->Host = 'smtp.gmail.com';
                     $mail->SMTPAuth = true;
                     $mail->Username = 'jankikansagra12@gmail.com';
-                    $mail->Password = 'your App Password';
+                    $mail->Password = 'your password';
                     $mail->SMTPSecure = 'ssl';
                     $mail->Port = 465;
                     // $mail->SMTPDebug = 2;

@@ -2,6 +2,13 @@
 include_once("guest_header.php");
 
 ?>
+<script>
+    function enableButton() {
+        document.getElementById('r_btn').disabled = false;
+    }
+
+    setTimeout(enableButton, 10000);
+</script>
 <div class="container-fluid">
     <div class="row">
         <div class=col-lg-3></div>

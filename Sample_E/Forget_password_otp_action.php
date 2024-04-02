@@ -6,8 +6,8 @@ $em = $_SESSION['forgot_em'];
 $token = $_SESSION['forgot_token'];
 $q1 = "select * from `token` where email='$em' and token='$token'";
 $result = mysqli_query($con, $q1);
-$q = "select * from registration where email='$em'";
-$result1 = mysqli_query($con, $q);
+// $q = "select * from registration where email='$em'";
+// $result1 = mysqli_query($con, $q);
 $count = mysqli_num_rows($result);
 if (isset($_POST['btn'])) {
     $otp = $_POST['otp'];
