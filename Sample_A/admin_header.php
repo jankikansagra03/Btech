@@ -32,6 +32,7 @@ if (!isset($_SESSION['admin_uname'])) {
     <script src="js/additional-methods.min.js"></script>
     <script src="js/validator.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/ajax.js"></script>
 
 </head>
 
@@ -72,7 +73,7 @@ if (!isset($_SESSION['admin_uname'])) {
                     <li class="nav-item">
                         <a class="nav-link <?php if ($arr_url[3] == "change_password.php") {
                                                 echo "active";
-                                            } ?>" href="change_password.php">Change Password</a>
+                                            } ?>" href="admin_change_password.php">Change Password</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if ($arr_url[3] == "logout.php") {
@@ -84,3 +85,30 @@ if (!isset($_SESSION['admin_uname'])) {
         </nav>
     </div>
     <br>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <?php
+                if (isset($_COOKIE['success'])) {
+                ?>
+
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Success!</strong> <?php echo $_COOKIE['success']; ?>
+                    </div>
+                <?php
+                }
+                if (isset($_COOKIE['error'])) {
+                ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Success!</strong> <?php echo $_COOKIE['error']; ?>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>

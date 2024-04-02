@@ -72,6 +72,9 @@ $(document).ready(function () {
             },
             msg: {
                 required: true
+            },
+            old_pswd: {
+                required: true
             }
         },
         messages: {
@@ -110,6 +113,9 @@ $(document).ready(function () {
             },
             msg: {
                 'required': 'Message field cannot be empty.'
+            },
+            old_pswd: {
+                'required': 'Please enetr old password'
             }
         },
         errorPlacment: function (error, element) {
@@ -139,6 +145,9 @@ $(document).ready(function () {
             }
             if (element.attr('name') == "msg1") {
                 $('#msg1_err').html(error);
+            }
+            if (element.attr('name' == "old_pswd")) {
+                $('#old_err').html(error);
             }
         }
     });
