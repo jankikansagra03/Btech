@@ -1,11 +1,11 @@
 $(document).ready(function () {
     $.validator.addMethod("fnregex", function (value, element) {
-        reg12 = /^[a-zA-Z]+$/;
+        reg12 = /^[a-zA-Z ]+$/;
         return reg12.test(value);
     }, "Fullname must contain only letters");
 
     $.validator.addMethod("emregex", function (value, element) {
-        reg12 = /^[a-zA-Z0-9.-_]+@[A-Za-z]+\.[a-zA-Z.]{2,3}$/;
+        reg12 = /^([\w-\.])+@([\w-]+\.)+[\w-]{2,4}$/;
         return reg12.test(value);
     }, "Invalid Email Address");
 
@@ -40,10 +40,6 @@ $(document).ready(function () {
                 maxlength: 35,
                 fnregex: true
             },
-            mn: {
-                required: true,
-                mobregex: true
-            },
             email: {
                 required: true,
                 emregex: true
@@ -56,10 +52,21 @@ $(document).ready(function () {
             },
             repswd: {
                 required: true,
-                equalTo: '#pwd1'
+                equalTo: '#pwd'
             },
             pic: {
                 required: true,
+                accept: "image/jpeg,image/png,image/gif",
+                filesize: 2
+            },
+            mobile: {
+                required: true,
+                mobregex: true
+            },
+            gen: {
+                required: true
+            },
+            pic_updt: {
                 accept: "image/jpeg,image/png,image/gif",
                 filesize: 2
             },
@@ -72,10 +79,6 @@ $(document).ready(function () {
                 required: "Fullname is a required field",
                 minlength: "Fullname must contain atleast 2 characters",
                 maxlength: "fullname cannot be greater than 35 characters"
-            },
-            mn: {
-                required: "mobile Number Cannot be Empty",
-                mobregex: "Mobile number must contain exactly 10 digits",
             },
             email: {
                 required: "Email address is a required filed"
@@ -95,9 +98,20 @@ $(document).ready(function () {
                 accept: "only imge file with extension jpg,png and gif are allowed",
                 filesize: "File size must not be greater than 10KB"
             },
+            mobile: {
+                required: "Mobile number cannot be empty"
+            },
+            gen: {
+                required: "Please select your gender"
+            },
+            pic_updt: {
+                accept: "only imge file with extension jpg,png and gif are allowed",
+                filesize: "File size must not be greater than 10KB"
+            },
             msg: {
-                required: "Message field cannot be empty"
+                required: "Message filed cannot be Empty"
             }
+
         },
         errorPlacment: function (error, element) {
             if (element.attr('name') == "fn") {
@@ -115,14 +129,18 @@ $(document).ready(function () {
             if (element.attr('name') == "pic") {
                 $('#file1_err').html(error);
             }
+            if (element.attr('name') == "gen") {
+                $('#gen_err').html(error);
+            }
+            if (element.attr('name') == "mobile") {
+                $('#mobile_err').html(error);
+            }
+            if (element.attr('name') == "pic_updt") {
+                $('#file1_updt_err').html(error);
+            }
             if (element.attr('name') == "msg") {
-                $('#msg_err').html(error);
+                $('#msg1_err').html(error);
             }
-            if (element.attr('name') == "mn") {
-                $('#mn_err').html(error);
-            }
-
-
         }
     });
 });

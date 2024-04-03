@@ -92,7 +92,7 @@ if (isset($_POST['btn'])) {
             $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
             $mail->SMTPAuth = true; // Enable SMTP authentication
             $mail->Username = 'jankikansagra12@gmail.com'; // SMTP username
-            $mail->Password = 'gkju dkuh jujd tqcg'; // SMTP password
+            $mail->Password = ''; // SMTP password
             $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 465; // TCP port to connect to
             // $mail->SMTPDebug = 2;

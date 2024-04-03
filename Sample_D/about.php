@@ -1,6 +1,7 @@
 <?php
-include_once("header.php");
+include_once("guest_header.php");
 ?>
+
 <br>
 <div class="container">
     <h1>About RK University</h1>
@@ -22,9 +23,8 @@ include_once("header.php");
     <h1>Vision</h1>
     <br>
     To be a leading educational organization imparting holistic education to help students become responsible world citizens who are sensitive to the needs of the society.
-
-    <br>
-
-    <?php
-    include_once("footer.php");
-    ?>
+</div>
+<br>
+<?php
+include_once("footer.php");
+?>

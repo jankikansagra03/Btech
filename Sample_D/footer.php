@@ -1,8 +1,5 @@
-<br>
-<div class="container-fluid bg-dark text-white">
-    All rights reserved by RK University
-</div>
-
-</body>
-
-</html>
+  <footer class="footer text-center">
+      <div class="container">
+          <span class="text-white">© 2024 Sample Website. All rights reserved.</span>
+      </div>
+  </footer>
